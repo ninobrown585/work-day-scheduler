@@ -17,4 +17,14 @@ $("#currentDay").text(currentDay);
 // sets the current hour equal to currentTime variable
 var currentTime = moment().hour();
 
-
+// Changing colors based on time of day
+$("#time").each(function() {
+    var currentElement = $(this).attr("id");
+    if(currentTime > currentElement) {
+        $(this).children().eq(1).addClass("past");
+    } else if(currentTime == currentElement) {
+        $(this).children().eq(1).addClass("present");
+    } else {
+        $(this).children().eq(1).addClass("future");
+    }
+})
