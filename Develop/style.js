@@ -11,7 +11,7 @@ $(document).ready(function(){
 })
 
 // current day timestamp
-var currentDay = moment().format('MMMM Do YYYY, h:mm:ss a');
+var currentDay = moment().format('dddd, MMMM Do');
 $("#currentDay").text(currentDay);
 
 // sets the current hour equal to currentTime variable
@@ -76,11 +76,5 @@ $("#save").click(function(){
 
         var input5 = task5.val().trim();
         localStorage.setItem("task5", input5);
-        $("#5pm").val(localStorage.getItem("task5"));
-})
-
-// // clears the whole schedule if user wants to start over
-$("#clear").click(function() {
-    localStorage.clear();
-    location.reload();
-})
+        $(".5pm").val(localStorage.getItem("task5"));
+});
